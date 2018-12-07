@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuadro de Textos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="page-header" >
+             <h1>Example page header <small>Subtext for header</small></h1>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel heading
+            </div> 
+            <table class="table" id=""> 
+                    <thead> 
+                        <tr> 
+                            <th>#</th> 
+                            <th>First Name</th> 
+                            <th>Last Name</th> 
+                            <th>Info</th> 
+                            <th>Opt</th> 
+                        </tr> 
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <th scope="row">1</th> 
+                            <td>lorem</td> 
+                            <td>Otto</td> 
+                            <td id="cuadro"><p id="cambio" onclick="cambiar()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ipsum, temporibus, culpa a dolorum harum mollitia ea sint laudantium placeat, iure nisi dolore voluptates velit nesciunt rem impedit quod earum.</p></td> 
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-danger" id="boton" onclick="cambiar()">Editar</button>
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr> <th scope="row">2</th> 
+                            <td>Jacob</td> 
+                            <td>Thornton</td> 
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores minus, doloremque corrupti harum ipsa neque delectus molestiae hic expedita officia fugiat tempora modi odio. Ratione veritatis id delectus, reprehenderit eligendi.</td> 
+                        </tr> 
+                            <tr> <th scope="row">3</th> 
+                                <td>Larry</td>
+                                 <td>the Bird</td> 
+                                 <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quae culpa animi odio dolor dolore quam, atque laborum dolores doloribus ex aliquid, veniam aut deleniti in eveniet nobis facere quasi.</td> 
+                             </tr> 
+                         </tbody> 
+                     </table> 
+                 </div>
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function cambiar() {
+    var valor = document.getElementById("cambio").innerText;
+    var padre = document.getElementById("cuadro");
+    var hijo = document.getElementById("cambio");
+    var boton = document.getElementById("boton");
+    var elemento = document.createElement("textarea");
+    elemento.setAttribute("height","auto");
+    elemento.value = valor;
+    padre.removeChild(hijo);
+    elemento.setAttribute("class", "form form-control rounded-0");
+    elemento.setAttribute("rows", "10");
+    boton.setAttribute("class", "btn btn-danger disabled")
+    boton.removeAttribute("onclick"); 
+    elemento.setAttribute("id", "cambio");
+    document.getElementById("cuadro").appendChild(elemento);
+
+    }
+</script>
+</body>
+<script src="jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
